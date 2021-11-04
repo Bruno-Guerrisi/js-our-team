@@ -1,8 +1,16 @@
-// 1) Creiamo il nostro array di oggetti che rappresentano ciascun membro del team
+/* 
+1) Creiamo il nostro array di oggetti che rappresentano ciascun membro del team
+2)
+ */
 
-
-
+/* container uteti*/
 const teamContainer = document.querySelector('.team-container');
+
+/* nuovi membri */
+const newImage= document.getElementById('image');
+const newName = document.getElementById('name');
+const newRole = document.getElementById('role');
+const buttonNewUser = document.getElementById('addMemberButton');
 
 const users = [
 
@@ -39,11 +47,34 @@ const users = [
 
 ];
 
+
+buttonNewUser.addEventListener('click', ()=>{
+    
+    const nameNewUser = newName.value;
+    const RoleNewUser = newRole.value;
+    const newimageUser = newImage.value;
+
+    
+    const addNewUser = {
+        name: `${nameNewUser}`,
+        role: `${RoleNewUser}`,
+        imageUser: `${newimageUser}`,
+    };
+
+    users.push(addNewUser);
+
+    generateNewUsers(users ,teamContainer) 
+    
+});
+
+
 /* stampa membri */
-generateUsers(users, teamContainer);
+generateAllUsers(users, teamContainer);
+
+
 
 /* funzioni per stapare i membri */
-function generateUsers(users) {
+function generateAllUsers(users,teamContainer) {
     
     for (let i = 0; i < users.length; i++) {
 
@@ -63,4 +94,22 @@ function generateUsers(users) {
             </div>
           </div>`;
     }
+}
+
+/* funzioni per stapare i nuovi membri */
+function generateNewUsers(users,teamContainer) {
+    
+    teamContainer.innerHTML += 
+    `<div class="team-card">
+        <div class="card-image">
+            <img
+            src="${users[users.length -1].imageUser}"
+            alt="${users[users.length -1].name}"
+            />
+        </div>
+        <div class="card-text">
+            <h3>${users[users.length -1].name}</h3>
+            <p>${users[users.length -1].role}</p>
+        </div>
+    </div>`;
 }
