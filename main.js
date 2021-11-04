@@ -65,6 +65,11 @@ buttonNewUser.addEventListener('click', ()=>{
 
     users.push(addNewUser);
 
+    /*  METODO PER AGGIUNGERE I NUOVI UTENTI SENZA USARE UNA FUNZIONE */
+    teamContainer.innerHTML = '';
+    generateAllUsers(users,teamContainer)
+
+    /*  METODO PER AGGIUNGERE I NUOVI UTENTI CON UNA FUNZIONE */
     generateNewUsers(users,teamContainer);
 });
 
@@ -92,9 +97,10 @@ function generateAllUsers(users,teamContainer) {
     }
 }
 
+
+/*  METODO PER AGGIUNGERE I NUOVI UTENTI CON UNA FUNZIONE */
 /* funzioni per stapare i nuovi membri */
-function generateNewUsers(users,teamContainer) {
-    
+/* function generateNewUsers(users,teamContainer) {
     teamContainer.innerHTML += 
     `<div class="team-card">
         <div class="card-image">
@@ -108,4 +114,4 @@ function generateNewUsers(users,teamContainer) {
             <p>${users[users.length -1].role}</p>
         </div>
     </div>`;
-}
+} */
