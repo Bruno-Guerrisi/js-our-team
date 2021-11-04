@@ -47,6 +47,8 @@ const users = [
 
 ];
 
+/* stampa membri */
+generateAllUsers(users, teamContainer);
 
 buttonNewUser.addEventListener('click', ()=>{
     
@@ -63,17 +65,11 @@ buttonNewUser.addEventListener('click', ()=>{
 
     users.push(addNewUser);
 
-    generateNewUsers(users ,teamContainer) 
-    
+    generateNewUsers(users,teamContainer);
 });
 
 
-/* stampa membri */
-generateAllUsers(users, teamContainer);
-
-
-
-/* funzioni per stapare i membri */
+/* funzioni per stapare i membri gia presenti*/
 function generateAllUsers(users,teamContainer) {
     
     for (let i = 0; i < users.length; i++) {
