@@ -70,7 +70,7 @@ buttonNewUser.addEventListener('click', ()=>{
     generateAllUsers(users,teamContainer)
 
     /*  METODO PER AGGIUNGERE I NUOVI UTENTI CON UNA FUNZIONE */
-    generateNewUsers(users,teamContainer);
+    /* generateNewUsers(users,teamContainer); */
 });
 
 
